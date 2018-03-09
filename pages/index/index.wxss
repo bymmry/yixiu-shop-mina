@@ -1,0 +1,7 @@
+/**index.wxss**/
+.loading{
+  display: block;
+  width: 100%;
+  text-align: center;
+  margin-top: 20%;
+}

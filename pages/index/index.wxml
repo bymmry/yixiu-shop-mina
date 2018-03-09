@@ -1,0 +1,10 @@
+<!--index.wxml-->
+<view class="container">
+  <view wx:if="webViewSrc">
+    <text class='loading'>loading...</text>
+    <web-view src="{{webViewSrc}}"></web-view>
+  </view>
+  <view wx:else>
+    <web-view src="{{webViewSrc}}"></web-view>
+  </view>
+</view>
