@@ -6,8 +6,8 @@ import config from '../../utils/config'
 //获取应用实例
 const app = getApp();
 // const url = 'http://localhost:8080';
-const url = 'http://localhost:8080/#/sellerHome';
-// const url = `${config.url}/#/home`;
+// const url = 'http://localhost:8080/#/sellerHome';
+const url = `${config.url}/#/sellerHome`;
 
 Page({
   data: {
