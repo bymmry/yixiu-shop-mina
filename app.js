@@ -4,7 +4,7 @@ App({
 
   },
   globalData: {
-    appid: "wx09e56891c8a3ff17",
+    appid: "wx1aafb8d96b79bd6b",
     paySuccessUrl: "",
     openid: "",
     out_trade_no: 1

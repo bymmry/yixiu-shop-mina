@@ -26,8 +26,8 @@ Page({
       console.log('1.登陆成功')
       var url1 = config.getOpenidUrl;
       var params = {
-        appid: "wx09e56891c8a3ff17",
-        secret: "f752b99103713585f041e5eb8c783339",
+        appid: "wx1aafb8d96b79bd6b",
+        secret: "7349f3cd8ecbc8b3674ff00746ed8c2d",
         js_code: res.code,
         grant_type: "authorization_code"
       }
@@ -36,6 +36,7 @@ Page({
     }).
       then(res => {
         console.log('2.openid获取成功')
+        console.log(res.data);
         console.log(res.data.data.openid)
         let openid = res.data.data.openid;
         if (openid) {
