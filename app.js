@@ -8,6 +8,7 @@ App({
     secret: "c87117d4f87b01f8016ebdf8173f05df",
     paySuccessUrl: "",
     openid: "",
-    out_trade_no: 1
+    out_trade_no: 1,
+    userInfo:{}
   }
 })
