@@ -13,7 +13,8 @@ Page({
   data: {
     webViewSrc: "",
     userInfo: {},
-    openid: ""
+    openid: "",
+    show: false
   },
   onLoad: function () {
     let that = this;
@@ -23,11 +24,11 @@ Page({
     })
     var wxLogin = wxApi.wxLogin()
     wxLogin().then(res => {
-      console.log('1.登陆成功')
+      console.log('1.登陆成功');
       var url1 = config.getOpenidUrl;
       var params = {
         appid: "wx1aafb8d96b79bd6b",
-        secret: "7349f3cd8ecbc8b3674ff00746ed8c2d",
+        secret: "c87117d4f87b01f8016ebdf8173f05df",
         js_code: res.code,
         grant_type: "authorization_code"
       }
@@ -35,18 +36,18 @@ Page({
       return wxRequest.getRequest(url1, params)
     }).
       then(res => {
-        console.log('2.openid获取成功')
+        console.log("openid:");
         console.log(res.data);
-        console.log(res.data.data.openid)
+        // console.log(res.data.data.openid)
         let openid = res.data.data.openid;
         if (openid) {
           app.globalData.openid = openid;
           that.data.openid = openid;
         }
-        //3.获取用户信息
+        wx.hideToast()
+         //3.获取用户信息
         var wxGetUserInfo = wxApi.wxGetUserInfo()
-        return wxGetUserInfo()
-
+        return wxGetUserInfo()    
       }).
       then(res => {
         console.log('3.用户信息成功')
@@ -75,7 +76,7 @@ Page({
       })
       .finally(function (res) {
         console.log('finally~')
-        wx.hideToast()
+        // wx.hideToast()
       })
   },
   onShow: function () {
@@ -101,7 +102,8 @@ Page({
 
     console.log(webViewUrl);
     this.setData({
-      webViewSrc: webViewUrl
+      show: true,
+      openid: this.data.openid
       // webViewSrc: url
     })
     setTimeout(function () {

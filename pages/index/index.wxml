@@ -1,10 +1,7 @@
 <!--index.wxml-->
 <view class="container">
-  <view wx:if="webViewSrc">
-    <text class='loading'>loading...</text>
-    <web-view src="{{webViewSrc}}"></web-view>
-  </view>
-  <view wx:else>
-    <web-view src="{{webViewSrc}}"></web-view>
+  <text class='loading'>loading...</text>
+  <view wx:if="show">
+    <web-view src="https://m.yixiutech.com/#/sellerHome?openid={{openid}}"></web-view>
   </view>
 </view>
