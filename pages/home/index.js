@@ -25,6 +25,11 @@ Page({
                   wx.hideLoading()
                 }
               })
+            }else{
+              wx.showModal({
+                title:'发生错误'+openidRes.data.code,
+                content:openidRes.data.errMsg
+              })
             }
           }
         })
